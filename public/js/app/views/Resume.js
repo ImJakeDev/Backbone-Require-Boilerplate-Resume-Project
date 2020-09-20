@@ -5,31 +5,27 @@ define([
   "backbone",
   "models/Model",
   "text!templates/resume.html",
-], function ($, Backbone, Model, template) {
+  "views/Header",
+], function ($, Backbone, Model, template, Header) {
   var Resume = Backbone.View.extend({
     // The DOM Element associated with this view
     el: ".resume",
 
     // View constructor
     initialize: function () {
-      // Calls the view's render method
-      this.render();
+      // Setting the view's template property using the Underscore template method
+      this.template = _.template(template, {});
+      // Dynamically updates the UI with the view's template
+      this.header = new Header
+      this.$el.html(this.template)
+      this.$el.append(this.header.$el);
+
+      console.log(this);
     },
 
     // View Event Handlers
     events: {},
 
-    // Renders the view's template to the UI
-    render: function () {
-      // Setting the view's template property using the Underscore template method
-      this.template = _.template(template, {});
-
-      // Dynamically updates the UI with the view's template
-      this.$el.html(this.template);
-
-      // Maintains chainability
-      return this;
-    },
   });
 
   // Returns the View class
