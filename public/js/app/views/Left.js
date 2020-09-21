@@ -6,7 +6,8 @@ define([
   "models/Model",
   "views/TitleCard",
   "views/ContactCard",
-], function ($, Backbone, Model, TitleCard, ContactCard) {
+  "views/MissionCard",
+], function ($, Backbone, Model, TitleCard, ContactCard, MissionCard) {
   const Left = Backbone.View.extend({
     tagName: "div",
     id: "left-col",
@@ -15,7 +16,11 @@ define([
     initialize: function () {
       this.titleCard = new TitleCard();
       this.contactCard = new ContactCard();
-      this.$el.append(this.titleCard.$el).append(this.contactCard.$el);
+      this.missionCard = new MissionCard();
+      this.$el
+        .append(this.titleCard.$el)
+        .append(this.contactCard.$el)
+        .append(this.missionCard.$el);
     },
     // View Event Handlers
     events: {},
