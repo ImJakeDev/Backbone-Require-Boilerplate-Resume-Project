@@ -1,10 +1,10 @@
 // Right.js
 // -------
-define(["jquery", "backbone", "models/Model", "views/TitleCard"], function (
+define(["jquery", "backbone", "models/Model", "views/ExperienceCard"], function (
   $,
   Backbone,
   Model,
-  TitleCard
+  ExperienceCard
 ) {
   const Right = Backbone.View.extend({
     tagName: "div",
@@ -12,8 +12,8 @@ define(["jquery", "backbone", "models/Model", "views/TitleCard"], function (
     className: "d-flex col-6 justify-content-center",
     // View constructor
     initialize: function () {
-      this.titleCard = new TitleCard();
-      this.$el.append(this.titleCard.$el);
+      this.experienceCard = new ExperienceCard();
+      this.$el.append(this.experienceCard.$el);
     },
     // View Event Handlers
     events: {},
