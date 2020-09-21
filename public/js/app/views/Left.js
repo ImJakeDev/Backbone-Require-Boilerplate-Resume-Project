@@ -8,6 +8,7 @@ define([
   "views/ContactCard",
   "views/MissionCard",
   "views/StrengthsCard",
+  "views/SkillsCard",
 ], function (
   $,
   Backbone,
@@ -15,7 +16,8 @@ define([
   TitleCard,
   ContactCard,
   MissionCard,
-  StrengthsCard
+  StrengthsCard,
+  SkillsCard,
 ) {
   const Left = Backbone.View.extend({
     tagName: "div",
@@ -27,11 +29,13 @@ define([
       this.contactCard = new ContactCard();
       this.missionCard = new MissionCard();
       this.strengthsCard = new StrengthsCard();
+      this.skillsCard = new SkillsCard();
       this.$el
         .append(this.titleCard.$el)
         .append(this.contactCard.$el)
         .append(this.missionCard.$el)
-        .append(this.strengthsCard.$el);
+        .append(this.strengthsCard.$el)
+        .append(this.skillsCard.$el);
     },
     // View Event Handlers
     events: {},
