@@ -8,7 +8,7 @@ define([
   const TitleCard = Backbone.View.extend({
     tagName: "div",
     id: "title-card",
-    className: "d-flex col-12 align-items-center card p-5",
+    className: "d-flex col-12 align-items-center card p-5 mb-3",
     // View constructor
     initialize: function () {
       this.$el.append(

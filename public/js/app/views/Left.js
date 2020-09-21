@@ -5,15 +5,17 @@ define([
   "backbone",
   "models/Model",
   "views/TitleCard",
-], function ($, Backbone, Model, TitleCard) {
+  "views/ContactCard",
+], function ($, Backbone, Model, TitleCard, ContactCard) {
   const Left = Backbone.View.extend({
     tagName: "div",
     id: "left-col",
-    className: "d-flex col-6 justify-content-center",
+    className: "d-flex col-6 flex-column justify-content-center",
     // View constructor
     initialize: function () {
       this.titleCard = new TitleCard();
-      this.$el.append(this.titleCard.$el);
+      this.contactCard = new ContactCard();
+      this.$el.append(this.titleCard.$el).append(this.contactCard.$el);
     },
     // View Event Handlers
     events: {},
